@@ -2,12 +2,20 @@ const path = require("path");
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
+const connect = require("connect");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sequelize = require("./config/connection.js");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+connect().use(
+  connect.session({
+    store: new SequelizeStore(options),
+    secret: "NOPENEVER",
+  })
+);
 
 const sess = {
   secret: "Super secret secret",
