@@ -10,12 +10,12 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require("./config/connection.js");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-connect().use(
-  connect.session({
-    store: new SequelizeStore,
-    secret: "NOPENEVER",
-  })
-);
+// connect().use(
+//   connect.session({
+//     store: new SequelizeStore,
+//     secret: "NOPENEVER",
+//   })
+// );
 
 const sess = {
   secret: "Super secret secret",
