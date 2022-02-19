@@ -12,7 +12,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 connect().use(
   connect.session({
-    store: new SequelizeStore(options),
+    store: new SequelizeStore,
     secret: "NOPENEVER",
   })
 );
